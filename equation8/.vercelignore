@@ -1,0 +1,13 @@
+.git
+.env
+.env.*
+.venv
+node_modules
+.local-data
+output
+docs
+tests
+tmp
+evaluation
+demo-materials
+__pycache__

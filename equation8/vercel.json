@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "builds": [
+    {"src": "package.json", "use": "@vercel/static-build", "config": {"distDir": "dist"}},
+    {"src": "api/index.py", "use": "@vercel/python", "config": {"excludeFiles": "{node_modules/**,.venv/**,.local-data/**,output/**,tests/**,docs/**,demo-materials/**,evaluation/**,.env,.git/**}"}}
+  ],
+  "routes": [
+    {"src": "/api/(.*)", "dest": "/api/index.py"},
+    {"handle": "filesystem"},
+    {"src": "/(.*)", "dest": "/index.html"}
+  ]
+}
